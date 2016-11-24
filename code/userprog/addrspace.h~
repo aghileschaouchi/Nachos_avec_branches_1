@@ -22,6 +22,7 @@
 #endif //CHANGED
 
 #define UserStacksAreaSize		1024	// increase this as necessary!
+#define SIZE_TAMPON 1024
 
 #ifdef CHANGED
 #define NB_MAX_THREAD                     4      
@@ -46,7 +47,8 @@ class AddrSpace:dontcopythis
     int AllocateUserStack();
     //pour ACTION 2.3 2.4
     void ClearBitMap();
-    
+    //TP3 ACTION I.3
+    static void ReadAtVirtual(OpenFile *executable, int virtualaddr, int numBytes, int position, TranslationEntry *pageTable, unsigned numPages);
 #endif //CHANGED
 
   private:
